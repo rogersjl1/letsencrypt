@@ -1,2 +1,2 @@
 # letsencrypt
-Docker image for renewing letencrypt SSL certs.
+Docker image for creating letencrypt SSL certs.
