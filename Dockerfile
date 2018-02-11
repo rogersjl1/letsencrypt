@@ -5,8 +5,10 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && mkdir -p /etc/letsencrypt \
-  && mkdir -p /var/www/letsencrypt
+  && mkdir -p /var/www/letsencrypt \
+  && apt-get update \
+  && apt-get install -y --no-install-recommends cron
 
 VOLUME ["/etc/cron.d", "/var/www/letsencrypt", "/etc/letsencrypt"]
 
-#CMD ["cron", "-f"]
+CMD ["cron", "-f"]
